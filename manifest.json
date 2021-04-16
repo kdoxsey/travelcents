@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "Travel Cents",
+    "version": "0.1.0",
+    "description": "Travel Cents Chrome Extension",
+    "permissions": [
+        "storage",
+        "notifications"
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "default_icon": "travelcents.png",
+        "default_popup": "popup.html"
+
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.amazon.com/gp/buy/spc/handlers/display.html?hasWorkingJavascript=1"],
+            "js": ["content.js"]
+        }
+    ]
+}
