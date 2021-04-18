@@ -10,3 +10,17 @@ footer {
   display: flex;
   justify-content: center;
 }
+
+#total:hoover {
+  background-color: blue;
+}
+
+#confirm-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* #confirmation {
+  display: flex;
+  align-items: center;
+} */
