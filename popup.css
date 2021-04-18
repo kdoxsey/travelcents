@@ -17,10 +17,9 @@ footer {
 
 #confirm-buttons {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-/* #confirmation {
-  display: flex;
-  align-items: center;
-} */
+#confirm-ask {
+  text-align: center;
+}
