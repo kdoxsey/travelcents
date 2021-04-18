@@ -7,12 +7,16 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
     }
     
     function createButtons() {
-        const btn = document.createElement('BUTTON');
-        // btn.textContent('hello')
-        document.body.appendChild(btn)
-        btn.appendChild(document.createTextNode(`$${result.change}`))
+    var buttons = [`$${result.change}`,`$1.00`,`$3.00`,`other`];
+    for(i = 0; i < buttons.length; i++) {
+    var button = document.createElement("button");
+    button.innerHTML = buttons[i];
+
+    document.body.appendChild(button);
+  }
     }
 
     calcTotal()
     createButtons()
+    // dollarBtn()
 })
