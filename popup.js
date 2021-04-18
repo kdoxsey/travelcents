@@ -14,7 +14,6 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
                     document.getElementById("confirmation").innerHTML = ``;
                 }
                 function onClickYes() {
-                    frontPage();
                     balance += parseFloat(result.change);
                     console.log(balance)
                 }
