@@ -11,12 +11,10 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
     for(i = 0; i < buttons.length; i++) {
     var button = document.createElement("button");
     button.innerHTML = buttons[i];
-
     document.body.appendChild(button);
   }
     }
 
     calcTotal()
     createButtons()
-    // dollarBtn()
 })
