@@ -5,3 +5,8 @@
 body {
   width: 200px;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+}
