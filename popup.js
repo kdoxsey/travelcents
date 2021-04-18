@@ -1,4 +1,5 @@
 chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(result) {
+    let balance = 0
 
     function frontPage() {    
         function calcTotals() { 
@@ -12,11 +13,17 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
                     frontPage();
                     document.getElementById("confirmation").innerHTML = ``;
                 }
-                document.getElementById("confirmation").innerHTML = `<p">add $${result.change} to your account?</p><div id="confirm-buttons"><button id="no">no</button><button id="confirm-btn">yes</button></div>`;
+                function onClickYes() {
+                    frontPage();
+                    balance += parseFloat(result.change);
+                    console.log(balance)
+                }
+                document.getElementById("confirmation").innerHTML = `<h4 id="confirm-ask">add $${result.change} to your account?</h4><div id="confirm-buttons"><button id="no">no</button><button id="yes">yes</button></div>`;
                 document.getElementById("total").innerHTML = ``;
                 document.getElementById("newTotal").innerHTML = ``;
                 document.getElementById("buttons").innerHTML = ``;
                 document.getElementById("no").addEventListener("click", onClickNo)
+                document.getElementById("yes").addEventListener("click", onClickYes)
                 console.log(event);
             }
             let buttons = [`$${result.change}`,`$1.00`,`$3.00`,`Other`];
