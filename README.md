@@ -13,6 +13,8 @@ _Currently on works on Amazon checkout_
 
 - Fill your Amazon cart and click 'Proceed to checkout' (You can click "Proceed to Checkout" without placing an order. Just don't click on "Place your order" unless you want to.)
 
+- If testing changes, make sure to first refresh the extension in the Chrome Extension settings.
+
 ## Technologies Used
 
 ### Client-Side
