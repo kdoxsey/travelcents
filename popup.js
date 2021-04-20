@@ -21,9 +21,9 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
                 document.getElementById('buttons').appendChild(otherAmountInput)
                 return;
             }
-        // this happens when a change amount save button is clicked
+            // this happens when a change amount save button is clicked
             balance += parseFloat(event.target.id)
-            alert(`My balance: $${parseFloat(balance).toFixed(2)}`)
+            alert(`You added $${parseFloat(event.target.id).toFixed(2)} to your account. Your balance is now $${parseFloat(balance).toFixed(2)}`)
         }
         
         let buttons = [parseFloat(result.change), 1, 3, `Other`];
@@ -45,7 +45,7 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
     function calcTotals() {
         // this is the part of the savePage that calculates the totals 
         document.getElementById("total").innerHTML = `Checkout Total: ${result.total}`;
-        document.getElementById("newTotal").innerHTML = `New Checkout Total: $${result.roundUp}.00`;
+        document.getElementById("newTotal").innerHTML = `Rounded up: ${result.roundUp}.00`;
     }
 
     function savePage() {    
