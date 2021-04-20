@@ -12,19 +12,20 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
     function createButtons() {
     // this is the part of the savePage that creates the buttons
         function onClickButton(event) {
+        // this is what happens when you click on one of the save buttons
             var change = new Audio('change.wav');
-            change.play();
-            // First generate an input field if user clicked on "other"
+            change.play();  
             if (event.target.id === `Other`) {
+            // First generate an input field if user clicked on "other"
                 const otherAmountInput = document.createElement("input")
                 document.getElementById('buttons').appendChild(otherAmountInput)
                 return;
             }
-        // this happens when a save button is clicked
+        // this happens when a change amount save button is clicked
             balance += parseFloat(event.target.id)
             alert(`My balance: $${parseFloat(balance).toFixed(2)}`)
         }
-
+        
         let buttons = [parseFloat(result.change), 1, 3, `Other`];
         for(i = 0; i < buttons.length; i++) {
             var button = document.createElement("button");
@@ -38,7 +39,7 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
             button.addEventListener("click", onClickButton)
             document.getElementById("buttons").appendChild(button);
         }
-
+        
     }
 
     function calcTotals() {
