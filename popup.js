@@ -12,9 +12,16 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
     function createButtons() {
     // this is the part of the savePage that creates the buttons
         function onClickButton(event) {
+            // First generate an input field if user clicked on "other"
+            if (event.target.id === `Other`) {
+                const otherAmountInput = document.createElement("input")
+                document.getElementById('buttons').appendChild(otherAmountInput)
+                return;
+            }
         // this happens when a save button is clicked
             balance += parseFloat(event.target.id)
             alert(`My balance: $${parseFloat(balance).toFixed(2)}`)
+            getElementById("content").innerHTML
         }
 
         let buttons = [parseFloat(result.change), 1, 3, `Other`];
@@ -47,5 +54,5 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
 
     // This is what loads by default
     savePage();
-    homePage()
+    homePage();
 })
