@@ -12,6 +12,8 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
     function createButtons() {
     // this is the part of the savePage that creates the buttons
         function onClickButton(event) {
+            var change = new Audio('change.wav');
+            change.play();
             // First generate an input field if user clicked on "other"
             if (event.target.id === `Other`) {
                 const otherAmountInput = document.createElement("input")
@@ -21,7 +23,6 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
         // this happens when a save button is clicked
             balance += parseFloat(event.target.id)
             alert(`My balance: $${parseFloat(balance).toFixed(2)}`)
-            getElementById("content").innerHTML
         }
 
         let buttons = [parseFloat(result.change), 1, 3, `Other`];
