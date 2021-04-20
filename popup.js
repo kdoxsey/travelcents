@@ -14,7 +14,7 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
         function onClickButton(event) {
         // this happens when a save button is clicked
             balance += parseFloat(event.target.id)
-            alert(`My balance: $${balance}`)
+            alert(`My balance: $${parseFloat(balance).toFixed(2)}`)
         }
 
         let buttons = [parseFloat(result.change), 1, 3, `Other`];
