@@ -4,9 +4,8 @@
     "version": "0.1.0",
     "description": "Travel Cents Chrome Extension",
     "permissions": [
-        "tabs",
         "storage",
-        "notifications"
+        "tabs"
     ],
     "background": {
         "scripts": ["background.js"]
