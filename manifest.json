@@ -4,6 +4,7 @@
     "version": "0.1.0",
     "description": "Travel Cents Chrome Extension",
     "permissions": [
+        "tabs",
         "storage",
         "notifications"
     ],
@@ -11,9 +12,7 @@
         "scripts": ["background.js"]
     },
     "browser_action": {
-        "default_icon": "travelcents.png",
-        "default_popup": "popup.html"
-
+        "default_icon": "travelcents.png"
     },
     "content_scripts": [
         {

@@ -1,13 +1,18 @@
-chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(result) {
+// Retrieve the current tab's url
+// chrome.storage.sync.get(['currentURL'], function(result) {
+//     alert(result.currentURL)
+//     })
 
+// Load the view content
+chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(result) {
     let balance = parseFloat(0)
     function homePage() {
     // this is the page that is displayed when there is no checkout page detected
         const homePageDiv = document.createElement("div")
         document.createTextNode(homePageDiv)
+        homePageDiv.innerHTML = `testing teseting home page`
         document.getElementById('homePage').appendChild(homePageDiv)
     }
-
 
     function createButtons() {
     // this is the part of the savePage that creates the buttons
@@ -55,6 +60,8 @@ chrome.storage.sync.get(['total', 'totalInt', 'roundUp', 'change'], function(res
     }
 
     // This is what loads by default
+    homePage()
     savePage();
-    homePage();
 })
+
+
