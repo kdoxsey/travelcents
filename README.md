@@ -1,7 +1,7 @@
 # Travel Cents
 
 Chrome extension that rounds checkout total up to nearest dollar and adds to an account to be spent on unique vacation destinations.
-_Currently on works on Amazon checkout_
+_Currently only works on Amazon checkout_
 
 ## To run in developer mode:
 
@@ -20,7 +20,7 @@ _Currently on works on Amazon checkout_
 ### Client-Side
 
 - HTML/CSS/JavaScript
-- Chrone Storage API
+- Chrome Storage API
 
 ### Server-Side
 
